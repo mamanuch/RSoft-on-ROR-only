@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RSoft</title> 
+  <link rel="stylesheet" type="text/css" href="app/styles/main.css">  
+   
+  <script src = "app/scripts/templates.js" type = "text/javascript"></script> 
+  <script src = "app/scripts/vendor.js" type = "text/javascript"></script>
+  <script src = "app/scripts/plugins.js" type = "text/javascript"></script>  
+  <script src="app/scripts/main.js"></script>  
+  <script>  
+  
+        $.ajaxSetup({                 
+            headers:{
+                'X-CSRF-Token': '<%= form_authenticity_token.to_s %>'
+            }                      
+        }); 
+          
+  </script>   
+        
+  <%= csrf_meta_tags %> 
+  <!-- my experiment sourses -->
+		
+		<!-- MenuItems -->
+        <script src="app/scripts/views/MenuItem.js"></script>
+        <script src="app/scripts/models/MenuItem.js"></script>
+        <script src="app/scripts/collections/MenuItemCollection.js"></script>
+        <script src="app/scripts/views/MenuItemCollectionView.js"></script>
+        <!-- Categories -->
+        <script src="app/scripts/models/CategoryModel.js"></script>
+        <script src="app/scripts/collections/CategoryCollection.js"></script>
+        <script src="app/scripts/views/CategoryView.js"></script>
+        <script src="app/scripts/views/CategoryViewCollection.js"></script>
+        <!-- Tables -->
+        <script src="app/scripts/models/TableModel.js"></script>
+        <script src="app/scripts/collections/TableCollection.js"></script>
+        <script src="app/scripts/views/TableModelView.js"></script>
+        <script src="app/scripts/views/TableCollectionView.js"></script>
+        <!-- Order -->
+        <script src="app/scripts/models/Order.js"></script>        
+        <script src="app/scripts/views/Order.js"></script>        
+        <!-- Order item -->
+        <script src="app/scripts/models/OrderItemModel.js"></script>
+        <script src="app/scripts/collections/OrderItemCollection.js"></script>
+        <script src="app/scripts/views/OrderItemView.js"></script>
+        <script src="app/scripts/views/OrderItemCollectionView.js"></script>
+        
+        
+  
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
