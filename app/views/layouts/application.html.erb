@@ -3,25 +3,39 @@
 <html>
 <head>
   <title>RSoft</title> 
-  <link rel="stylesheet" type="text/css" href="app/styles/main.css">  
-   
-  <script src = "app/scripts/templates.js" type = "text/javascript"></script> 
-  <script src = "app/scripts/vendor.js" type = "text/javascript"></script>
-  <script src = "app/scripts/plugins.js" type = "text/javascript"></script>  
-  <script src="app/scripts/main.js"></script>  
-  <script>  
+  <link rel="stylesheet" type="text/css" href="app/styles/BUILDmain.css">  
+      
+  <!-- my experiment sourses 
   
-        $.ajaxSetup({                 
-            headers:{
-                'X-CSRF-Token': '<%= form_authenticity_token.to_s %>'
-            }                      
-        }); 
-          
-  </script>   
+  <link rel="stylesheet" type="text/css" href="app/styles/main.css">
+  <link rel="stylesheet" type="text/css" href="app/styles/app_style.css">
+  <link rel="stylesheet" type="text/css" href="app/styles/menu_item.css">
+  <link rel="stylesheet" type="text/css" href="app/styles/order_style.css">
+  <link rel="stylesheet" type="text/css" href="app/styles/category_style.css">
+  <link rel="stylesheet" type="text/css" href="app/styles/orderitems_style.css">
+  <link rel="stylesheet" type="text/css" href="app/styles/table_style.css">  
+  
+  <script src="app/bower_components/modernizr/modernizr.js"></script>
+  <script src = "app/scripts/vendor.js" type = "text/javascript"></script> 
+  -->
+   
         
-  <%= csrf_meta_tags %> 
+  
   <!-- my experiment sourses -->
-		
+  
+		<!-- build:js scripts/vendor.js -->
+        <script src="app/bower_components/jquery/jquery.js"></script>  
+		<script src="app/bower_components/jquery/csrf-token.js"></script>  
+        <script src="app/bower_components/underscore/underscore.js"></script>
+        <script src="app/bower_components/backbone/backbone.js"></script>
+        <script src="app/bower_components/backbone/backbone-mediator.js"></script>
+        <!-- endbuild -->
+        
+        <script src = "app/scripts/templates.js" type = "text/javascript"></script>   
+        <script src = "app/scripts/plugins.js" type = "text/javascript"></script>  
+        <script src="app/scripts/main.js"></script>  
+        
+        
 		<!-- MenuItems -->
         <script src="app/scripts/views/MenuItem.js"></script>
         <script src="app/scripts/models/MenuItem.js"></script>
@@ -46,7 +60,20 @@
         <script src="app/scripts/views/OrderItemView.js"></script>
         <script src="app/scripts/views/OrderItemCollectionView.js"></script>
         
+        <script src="app/scripts/routes/Tables.js"></script>
         
+        <script>  
+  
+            $.ajaxSetup({                 
+                headers:{
+                    'X-CSRF-Token': '<%= form_authenticity_token.to_s %>'
+                }                      
+            }); 
+          
+        </script>   
+
+        
+        <%= csrf_meta_tags %> 
   
 </head>
 <body>

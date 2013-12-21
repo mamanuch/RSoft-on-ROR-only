@@ -109,8 +109,8 @@ client.Views = client.Views || {};
             
             console.log('Begin adding items FROM DB...');
             this.collection.each(this.addItemsFromDB, this);
-            console.log(this.collection);
-            console.log('Finish adding items FROM DB!');
+            //console.log(this.collection);
+            //console.log('Finish adding items FROM DB!');
         }
     });
 

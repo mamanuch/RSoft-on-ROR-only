@@ -9,24 +9,24 @@ client.Views = client.Views || {};
         
         initialize: function() {
                         this.collection = new client.Collections.TableCollection();
-
+                        var collection = this;
                         this.collection.fetch();
-                        this.collection.once("sync", this.render, this);
-                        console.log("Fetching Collection Complete");
+                        this.collection.once("sync", this.render, this);                                               
                     },
 
-        render: function() {
-                    console.log("Rendering Collection...");
-                    this.collection.each(this.rendermodel, this);
-                    console.log(this.collection);
-                    console.log("Collection Rendered");
+        render: function() {                        
+                        this.collection.each(this.rendermodel, this);  
+                        
+                        Backbone.Mediator.pub("tables-rendered");
+                        
+                        console.log(this);
                 },
 
-        rendermodel: function(tablemodel) {
-                        var view = new client.Views.TableModelView({model: tablemodel});
-                        this.$el.append(view.render().el);
-                    }
-
+        rendermodel: function(tablemodel) {                        
+                        var view = new client.Views.TableModelView({ model: tablemodel
+                                                                   });
+                        this.$el.append(view.render().el);  
+                }
     });
 
 })();
